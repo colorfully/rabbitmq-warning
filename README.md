@@ -1,31 +1,31 @@
 ## PHP版本 - rabbitmq-warning
 
 ### 简介
-#### rabbitmq-warning使用PHP实现，配合定时计划任务，对Rabbitmq服务监控预警
+rabbitmq-warning使用PHP实现，配合定时计划任务，对Rabbitmq服务监控预警
 
 ### 功能实现
-#### 1. rabbitmq服务连接是否正常
-#### 2. rabbitmq队列是否存在消息积压
-#### 3. 推送数据给rabbitmq队列的速度（暂未实现）
+1. rabbitmq服务连接是否正常
+2. rabbitmq队列是否存在消息积压
+3. 推送数据给rabbitmq队列的速度（暂未实现）
 
 ### 特点
-#### 1. 使用swoole process派生子进程，对rabbitmq服务和队列的消息长度进行监控
-#### 2. 使用redis对队列消息积压的次数进行记录
-#### 3. 当服务需要告警，可使用钉钉/邮件/短信方式预警（目前只实现了钉钉通知）。
+1. 使用swoole process派生子进程，对rabbitmq服务和队列的消息长度进行监控
+2. 使用redis对队列消息积压的次数进行记录
+3. 当服务需要告警，可使用钉钉/邮件/短信方式预警（目前只实现了钉钉通知）。
 
 ### 设计模型
 ![设计模型](docs/design.png)
 
 ### 安装
-#### 环境依赖：
-#### 1. php >= 7.0
-#### 2. swoole扩展（版本无要求）
-#### 3. redis扩展 >= 2.6
-#### composer install
+环境依赖：
+1. php >= 7.0
+2. swoole扩展（版本无要求）
+3. redis扩展 >= 2.6
+进入目录：composer install
 
 ### 使用
-#### 复制根目录下的config.demo.php，并重命名为：config.php，修改配置文件里的参数。
-#### 主要配置说明：
+复制根目录下的config.demo.php，并重命名为：config.php，修改配置文件里的参数。
+主要配置说明：
 ```
 //连接MQ失败预警
 'connectRules' => [
@@ -53,11 +53,10 @@
 
 ```
 #### 启动
-#### 由于rabbitmq-warning不是常驻进程，需使用定时计划任务配合，例： * * * * * php /PATH/server start （每分钟执行一次）
-
+由于rabbitmq-warning不是常驻进程，需使用定时计划任务配合，例： * * * * * php /PATH/server start （每分钟执行一次）
 
 ### 支持
-#### swoole
+swoole
 
 ### 其它
-#### 如有疑问，请邮件联系：310976780@@qq.com
+如有疑问，请邮件联系：310976780@@qq.com
