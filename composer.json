@@ -1,5 +1,5 @@
 {
-    "name": "administrator/rabbitmq-warning",
+    "name": "pupilcp/rabbitmq-warning",
     "description": "rabbitmq服务监控预警",
     "keywords": ["rabbitmq","mq", "监控","预警"],
     "license": "MIT",
