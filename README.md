@@ -12,6 +12,7 @@ rabbitmq-warning使用PHP实现，配合定时计划任务，对Rabbitmq服务�
 1. 使用swoole process派生子进程，对rabbitmq服务和队列的消息长度进行监控
 2. 使用redis对队列消息积压的次数进行记录
 3. 当服务需要告警，可使用钉钉/邮件/短信方式预警（目前只实现了钉钉通知）。
+4. 可以单独作为服务使用，也可以与PHP框架无缝结合。
 
 ### 设计模型
 ![设计模型](docs/design.png)
@@ -21,7 +22,7 @@ rabbitmq-warning使用PHP实现，配合定时计划任务，对Rabbitmq服务�
 1. php >= 7.0
 2. swoole扩展（版本无要求）
 3. redis扩展 >= 2.6
-进入目录：composer install
+##### 进入目录：composer install
 
 ### 使用
 复制根目录下的config.demo.php，并重命名为：config.php，修改配置文件里的参数。
@@ -52,7 +53,7 @@ rabbitmq-warning使用PHP实现，配合定时计划任务，对Rabbitmq服务�
 ],
 
 ```
-#### 启动
+### 启动
 由于rabbitmq-warning不是常驻进程，需使用定时计划任务配合，例： * * * * * php /PATH/server start （每分钟执行一次）
 
 ### 支持
