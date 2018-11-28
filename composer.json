@@ -20,5 +20,11 @@
         "psr-4": {
             "LCP\\": "src"
         }
-    }
+    },
+    "repositories":[
+        {
+            "type":"vcs",
+            "url":"https://github.com/pupilcp/rabbitmq-warning"
+        }
+    ],
 }
