@@ -30,7 +30,7 @@ return [
         'exchange' => 'php.amqp.ext',
     ],
     //连接MQ失败预警
-    'connectNotice' => [
+    'connectRules' => [
         'connectFailTimes' => 3, //单次执行，连续连接MQ失败达到预警的次数
         'interval'         => 2, //尝试重连的时间间隔（单位：s）
         'mode'             => [ //预警模式
@@ -39,7 +39,7 @@ return [
         ],
     ],
     //监控队列配置
-    'queue' => [
+    'queueRules' => [
     	//队列名称
         'test' => [
             'name'             => 'test',
